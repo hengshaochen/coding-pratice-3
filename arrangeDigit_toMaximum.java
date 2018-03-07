@@ -5,7 +5,7 @@ public class Main {
     }
     
     public Main() {
-        System.out.println(arrangeMaxNumber(1234));
+        System.out.println(arrangeMaxNumber(395193));
     }
     
     public int arrangeMaxNumber(int num) {
@@ -13,7 +13,6 @@ public class Main {
             // Corner case, not integer or have negative.
             return -1;
         }
-        
         // use a bucket to stored the repeat time of each digit
         int[] bucket = new int[10];
         // input integer number to char, help us to divide the digit
@@ -25,7 +24,7 @@ public class Main {
         // StringBuilder sb = 
         int ans = 0;
         for (int i = 9; i >= 1; i--) {
-            if (bucket[i] != 0) {
+            while (bucket[i] != 0) {
                 ans = (ans * 10) + i;
                 bucket[i] -= 1;
             }
